@@ -430,7 +430,7 @@ const advTextDemoUrlPopup = document.querySelector('.pop-up-adv__inner.pop-up-ur
 const advTextDemoEmailPopup = document.querySelector('.pop-up-adv__inner.pop-up-email');
 
 const advTextDemoUrlHandler = (e) => {
-    advTextDemoUrlPopup.classLsit.remove('show');
-    advTextDemoEmailPopup.classLsit.add('show');
+    advTextDemoUrlPopup.classList.remove('show');
+    advTextDemoEmailPopup.classList.add('show');
 };
 advTextDemoUrl.addEventListener('click', advTextDemoUrlHandler);
