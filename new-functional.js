@@ -428,8 +428,9 @@
 const advTextDemoUrl = document.getElementById("adv-text-demo-url");
 const advTextDemoUrlPopup = document.querySelector('.pop-up-adv__inner.pop-up-url');
 const advTextDemoEmailPopup = document.querySelector('.pop-up-adv__inner.pop-up-email');
-
+console.log(123);
 const advTextDemoUrlHandler = (e) => {
+    console.log('click')
     advTextDemoUrlPopup.classList.remove('show');
     advTextDemoEmailPopup.classList.add('show');
 };
