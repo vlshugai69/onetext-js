@@ -306,39 +306,11 @@
     
     const textDemoHandler = (e, form) => {
         e.preventDefault();
-        console.log(form.valid())
+   
         if (form.valid()) {
-    
-            fetch("https://ipapi.co/json")
-                .then(res => res.json())
-                .then(data => {
-                    if (data.country_code.includes('US')) {
-                        usaPopup.style.display = "flex";
-                        usaPopup.style.opacity = "100%";
-    
-                    } else {
-                        otherWorldPopup.style.display = "flex";
-                        otherWorldPopup.style.opacity = "100%";
-                    }
-                    qrCode.update({
-                        data: `https://onetext.com/link/d288791fb045?merchantUrl=${urlInput.value?urlInput.value:advInput.value}&source=${getDemoSourceString()}`
-                    });
-                    animateColorStopsOffset(0, 1, 2000);
-    
-    
-                    fetch(`https://onetext.com/api/demo/brand?url="${urlInput.value?urlInput.value:advInput.value}"`, requestBrandOptions)
-                        .then(response => response.json())
-                        .then(result => {
-                            popupBrand.forEach((brand) => {
-                                brand.textContent = result.brandName
-                            })
-                        })
-                        .catch(error => console.log('error', error));
-                    fetch("https://onetext.com/api/flow/custom/start", getData())
-                        .then(response => response.text())
-                        .then(result => console.log(result))
-                        .catch(error => console.log('error', error));
-                })
+            advTextDemoUrlPopup.classList.remove('show');
+            advTextDemoEmailPopup.classList.add('show');
+           
         }
     }
 
@@ -369,7 +341,7 @@
         }
     }
     var $formAdv = $("#adv-form");
-    const advTextDemo = document.getElementById('adv-text-demo')
+    const advTextDemo = document.getElementById('adv-text-demo-url')
     $formAdv.validate({
         rules: {
             advUrl: {
@@ -429,7 +401,7 @@ const advTextDemoUrlPopup = document.querySelector('.pop-up-adv__inner.pop-up-ur
 const advTextDemoEmailPopup = document.querySelector('.pop-up-adv__inner.pop-up-email');
 console.log(123);
 const advTextDemoUrlHandler = (e) => {
-    console.log('click')
+    console.log('click');
     advTextDemoUrlPopup.classList.remove('show');
     advTextDemoEmailPopup.classList.add('show');
 };
