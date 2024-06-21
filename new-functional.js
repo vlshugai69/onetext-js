@@ -424,3 +424,13 @@
     const phoneError = document.getElementById('phone-error')
     const phoneSubmit = document.getElementById("phone-submit");
 })();
+
+const advTextDemoUrl = document.getElementById("adv-text-demo-url");
+const advTextDemoUrlPopup = document.querySelector('.pop-up-adv__inner.pop-up-url');
+const advTextDemoEmailPopup = document.querySelector('.pop-up-adv__inner.pop-up-email');
+
+const advTextDemoUrlHandler = (e) => {
+    advTextDemoUrlPopup.classLsit.remove('show');
+    advTextDemoEmailPopup.classLsit.add('show');
+};
+advTextDemoUrl.addEventListener('click', advTextDemoUrlHandler);
